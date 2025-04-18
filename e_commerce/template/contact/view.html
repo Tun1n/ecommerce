@@ -14,16 +14,17 @@
         <div class='text-center'>
             <h1>{{ title }}</h1>
         </div>
-   <div class='container'>
-            <div class='row'>
-                <div class='col'>
-                    <p>{{ content }}</p>
-                    <div class='col-sm-6 col-12'>
-                    <form method='POST'> {% csrf_token %}
-                        <input type='text' class='form-control' name='fullname 'placeholder='Digite seu nome completo'>
-                        <input type='email' class='form-control' name='email' placeholder='Digite seu email'>
-                        <textarea name='content' class='form-control' placeholder='Digite seu texto aqui'></textarea>
-                        <button type='submit' class='btn btn-default'>Enviar</button>
+   <div class='container'> <!-- class='container'é um framework como Bootstrap para aplicar estilos prontos, como centralizar conteúdo e definir largura máxima responsiva. -->
+            <div class='row'> <!-- criar linhas de layout -->
+                <div class='col'> <!-- colunas dentro de uma linha (.row). -->
+                    <p>{{ content }}</p> <!-- mostra o conteudo escrito na views.py na sessão do CONTACT -->
+                    <div class='col-sm-6 col-12'> <!--  COL-12 (Em telas pequenas (mobile) e menores, essa coluna ocupa 12 colunas, ou seja, 100% da largura da linha.) -->
+                      <!-- COL-SM-6 (Em telas pequenas (a partir de 576px de largura) e maiores, essa coluna ocupa 6 colunas, ou seja, 50% da linha) -->
+                    <form method='POST'> {% csrf_token %} <!-- o método POST serve para enviar as informações para o back-end -->  <!-- {% csrf_token %} serva para proteção de ataques maliciosos-->
+                        <input type='text' class='form-control' name='fullname 'placeholder='Digite seu nome completo'> <!-- cria uma área de texto com um placeholder (espaço para escrever) focado no nome completo-->
+                        <input type='email' class='form-control' name='email' placeholder='Digite seu email'> <!-- cria uma área de texto com um placeholder (espaço para escrever) focado no email-->
+                        <textarea name='content' class='form-control' placeholder='Digite seu texto aqui'></textarea> <!-- cria uma área de texto com um placeholder (espaço para escrever) focado no texto-->
+                        <button type='submit' class='btn btn-default'>Enviar</button> <!-- Cria um botão e o nomeia como "ENVIAR" -->
                     </form>
                     </div>
                 </div>
