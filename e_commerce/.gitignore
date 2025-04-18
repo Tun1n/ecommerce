@@ -1,0 +1,7 @@
+#gitignore -> faz com que o que for escrito não suba para o github
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+*.sqlite3
