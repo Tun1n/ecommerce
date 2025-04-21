@@ -30,18 +30,18 @@ class ContactForm(forms.Form):
     
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
+    username = forms.CharField() 
     password = forms.CharField(widget=forms.PasswordInput)
 
 class RegisterForm(forms.Form):
     username = forms.CharField()
     email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput) 
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
 
     def clean_username(self):
-        username = self.cleaned_data.get('username')
-        qs = User.objects.filter(username=username)
+        username = self.cleaned_data.get('username') 
+        qs = User.objects.filter(username=username) 
         if qs.exists():
             raise forms.ValidationError("Esse usuário já existe, escolha outro nome.")
         return username
